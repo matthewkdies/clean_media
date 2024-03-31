@@ -1,0 +1,6 @@
+secrets
+__pycache__
+**/*.sqlite
+.vscode
+.DS_Store
+.devcontainer

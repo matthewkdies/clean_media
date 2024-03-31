@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "clean_media"
+version = "0.1.0"
+description = "A collection of Python functions to clean my NAS media folders."
+authors = ["Matt Dies <matthewkdies@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+    "C0301", # line-too-long
+    "C0114", # missing-module-docstring
+    "W0105", # pointless-string-statement
+]
+
+[tool.isort]
+multi_line_output = 3
+line_length = 88
+include_trailing_comma = true
+
