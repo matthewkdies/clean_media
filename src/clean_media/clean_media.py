@@ -2,13 +2,12 @@ from __future__ import annotations
 
 import logging
 import os
+import sys
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
 logging.basicConfig()
 logger.setLevel(logging.INFO)
-
-CONTENT_DIRS: list[Path] = [Path("/volume2/data/media/movies"), Path("/volume2/data/media/tv")]
 
 
 def rename_forced_subs(content_dir: Path):
@@ -135,5 +134,6 @@ def main(content_dir: Path) -> None:
 
 
 if __name__ == "__main__":
-    for content_dir in CONTENT_DIRS:
-        main(content_dir)
+    CONTENT_DIRS = sys.argv[1:]
+    for CONTENT_DIR in CONTENT_DIRS:
+        main(Path(CONTENT_DIR))
