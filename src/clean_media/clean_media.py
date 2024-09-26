@@ -122,6 +122,10 @@ def main(content_dir: Path) -> None:
     """
     logger.info("Cleaning media for content dir: '%s'.", str(content_dir))
 
+    # confirm dir exists
+    if not content_dir.exists():
+        raise NotADirectoryError(content_dir)
+
     # subtitles
     rename_forced_subs(content_dir)
     rename_en_to_eng_subs(content_dir)
